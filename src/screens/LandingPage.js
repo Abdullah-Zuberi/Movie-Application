@@ -5,8 +5,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import "../App.css";
 import MovieComponent from "../components/MovieComponent";
 import MovieInfoComponent from "../components/MovieInfoComponent";
-import { user } from "react";
-import { setUser } from "react";
 import { removeUser } from "../store/userSlice";
 import axios from "axios";
 import { Typography } from "@mui/material";
@@ -126,13 +124,6 @@ const LandingPage = () => {
 
   useEffect(() => {
     getTrendingData();
-    getCurrentUser()
-      .then((user) => {
-        setUser(user);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
   }, []);
 
   useEffect(() => {
@@ -164,59 +155,7 @@ const LandingPage = () => {
           />
         </SearchBar>
         <nav>
-          <ul className={activeMenu}>
-            {user ? (
-              <>
-                <li
-                  onClick={() => {
-                    navigate(`watchlist`);
-                  }}
-                >
-                  MY WATCHLIST
-                </li>
-                {user.email === process.env.REACT_APP_ADMIN_EMAIL ? (
-                  <li
-                    onClick={() => {
-                      navigate("/dashboard");
-                    }}
-                    style={{
-                      color: "#0069A0",
-                      margin: "0px 10px",
-                    }}
-                  >
-                    DASHBOARD
-                  </li>
-                ) : null}
-                <li
-                  onClick={() => {
-                    logoutUser().then(() => {
-                      setUser(null);
-                    });
-                    removeUser();
-                  }}
-                  style={{
-                    color: "white",
-                    backgroundColor: "red",
-                  }}
-                >
-                  LOGOUT
-                </li>
-              </>
-            ) : (
-              <>
-                <li
-                  onClick={() => {
-                    navigate(`login`);
-                  }}
-                  style={{
-                    padding: "10px 30px",
-                  }}
-                >
-                  LOGIN
-                </li>
-              </>
-            )}
-          </ul>
+          <ul className={activeMenu}></ul>
         </nav>
         <div className="icon">
           {menu ? (

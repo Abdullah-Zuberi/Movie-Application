@@ -66,53 +66,6 @@ function Navbar() {
               >
                 HOME
               </li>
-              {user ? (
-                <>
-                  {user && location.pathname == "/movie" ? (
-                    <li
-                      onClick={() => {
-                        navigate(`/watchlist`);
-                      }}
-                    >
-                      MY WATCHLIST
-                    </li>
-                  ) : null}
-                  <li
-                    // onClick={() => {
-                    //   logoutUser()
-                    //     .then(() => {
-                    //       setUser(null);
-                    //       navigate("/");
-                    //     })
-                    //     .catch((err) => {
-                    //       console.log(err);
-                    //     });
-                    // }}
-                    style={{
-                      backgroundColor: "#FF2F2F",
-                      color: "white",
-                      padding: "10px 30px",
-                      // borderRadius: "20px",
-                    }}
-                  >
-                    LOGOUT
-                  </li>
-                </>
-              ) : (
-                <li
-                  onClick={() => {
-                    navigate("/login");
-                  }}
-                  style={{
-                    backgroundColor: "#399EFF",
-                    color: "white",
-                    padding: "10px 30px",
-                    borderRadius: "20px",
-                  }}
-                >
-                  LOGIN
-                </li>
-              )}
             </ul>
           </nav>
         </Header>
