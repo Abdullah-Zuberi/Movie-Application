@@ -7,7 +7,6 @@ import HistoryEduIcon from "@mui/icons-material/HistoryEdu";
 import EZ_Input from "../components/EZ_Input";
 import axios from "axios";
 import { useDispatch } from "react-redux";
-// import { setUser } from "../store/userSlice";
 
 let btnStyle = {
   padding: "10px 100px",

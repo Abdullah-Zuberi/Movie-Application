@@ -15,11 +15,6 @@ export default function EZ_Input(props) {
     width,
   } = props;
 
-  // -- TYPE CHECK
-  // fullwidth: BOOLEAN
-  // required: BOOLEAN
-  // onChange: function
-
   return (
     <>
       <TextField

@@ -6,7 +6,6 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useNavigate } from "react-router-dom";
 import { Button, Grid } from "@mui/material";
 import { Box } from "@mui/system";
-// import { getCurrentUser } from "../config/firebasemethods";
 
 const Container = styled.div`
   display: flex;
@@ -68,21 +67,10 @@ function MovieInfoComponent(props) {
   const { selectedMovie } = props;
   let navigate = useNavigate();
 
-  //   useEffect(() => {
-  //     getCurrentUser()
-  //       .then((user) => {
-  //         setUser(user);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //   }, []);
-
   useEffect(() => {
     console.log(selectedMovie);
     axios
       .get(
-        // `https://www.omdbapi.com/?i=${selectedMovie}&plot=full&apikey=${API_KEY}` // `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${searchString}`
         `https://api.themoviedb.org/3/movie/${selectedMovie}?api_key=${API_KEY}`
       )
       .then((response) => {
@@ -115,52 +103,7 @@ function MovieInfoComponent(props) {
                   justifyContent: "center",
                   margin: "10px",
                 }}
-              >
-                <Button
-                  onClick={() => {
-                    console.log(movieInfo);
-                    navigate("/movie", {
-                      state: {
-                        ...movieInfo,
-                      },
-                    });
-                  }}
-                  variant="contained"
-                  //
-                  style={{
-                    backgroundColor: "black",
-                    border: "1px solid #e4a843",
-                    margin: "5px",
-                  }}
-                  sx={{ borderRadius: "20px" }}
-                >
-                  More Info
-                </Button>
-                {/* {user ? (
-                  <Button
-                    onClick={() => {
-                      console.log(movieInfo);
-                      // navigate("/movie", {
-                      //   state: {
-                      //     ...movieInfo,
-                      //   },
-                      // });
-                    }}
-                    variant="contained"
-                    //
-                    style={{
-                      border: "1px solid black",
-                      color: "#fff",
-                      fontWeight: "bold",
-                      margin: "5px",
-                    }}
-                    color="warning"
-                    sx={{ borderRadius: "20px" }}
-                  >
-                    Add to Watchlist
-                  </Button>
-                ) : null} */}
-              </Box>
+              ></Box>
             </Grid>
             <Grid
               style={{

@@ -19,7 +19,6 @@ import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import AnalyticsIcon from "@mui/icons-material/PeopleAlt";
 import Analytics from "./Analytics";
-// import { checkUser, logoutUser } from "../config/firebasemethods";
 
 const drawerWidth = 240;
 
@@ -52,7 +51,6 @@ const DrawerHeader = styled("div")(({ theme }) => ({
   alignItems: "center",
   justifyContent: "flex-end",
   padding: theme.spacing(0, 1),
-  // necessary for content to be below app bar
   ...theme.mixins.toolbar,
 }));
 
@@ -96,12 +94,6 @@ function AdminDashboard() {
   const [open, setOpen] = React.useState(false);
   const [auth, setAuth] = React.useState(true);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
-  //   useEffect(() => {
-  //     checkUser().catch(() => {
-  //       navigate("/");
-  //     });
-  //   }, []);
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -179,14 +171,7 @@ function AdminDashboard() {
                     open={Boolean(anchorEl)}
                     onClose={handleClose}
                   >
-                    <MenuItem
-                      //   onClick={() => {
-                      //     logoutUser().then(() => {
-                      //       navigate("/");
-                      //     });
-                      //   }}
-                      style={{ color: "red", fontWeight: "bolder" }}
-                    >
+                    <MenuItem style={{ color: "red", fontWeight: "bolder" }}>
                       LOGOUT
                     </MenuItem>
                     <MenuItem

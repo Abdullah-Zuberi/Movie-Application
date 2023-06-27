@@ -9,7 +9,6 @@ import { API_KEY } from "./LandingPage";
 import axios from "axios";
 import MovieInfoComponent from "../components/MovieInfoComponent";
 import Navbar from "../components/Navbar";
-// import { getCurrentUser } from "../config/firebasemethods";
 import { useSelector } from "react-redux";
 
 const ContainerMain = styled.div`
@@ -72,18 +71,6 @@ function FullMovieInfo() {
       setDetails(res.data);
     });
   };
-
-  //   useEffect(() => {
-  //     getCurrentUser()
-  //       .then((user) => {
-  //         setUser(user);
-  //       })
-  //       .catch((err) => {
-  //         console.log(err);
-  //       });
-  //     getSimilarMovies();
-  //     getCurrentData();
-  //   }, []);
 
   const patchApiCall = () => {
     axios
@@ -319,7 +306,6 @@ function FullMovieInfo() {
                   fontFamily: "Bebas Neue",
                   textAlign: "left",
                   backgroundColor: "black",
-                  // padding: "0px 0px 0px 60px",
                   margin: "50px 25px 20px 25px",
                 }}
                 color="error"

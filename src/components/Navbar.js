@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import MovieIcon from "@mui/icons-material/Movie";
 import { useLocation, useNavigate } from "react-router-dom";
-// import { getCurrentUser, logoutUser } from "../config/firebasemethods";
 
 const Header = styled.div`
   display: flex;
@@ -37,13 +36,7 @@ function Navbar() {
   const [user, setUser] = useState(null);
   let navigate = useNavigate();
   const location = useLocation();
-  //   useEffect(() => {
-  //     getCurrentUser()
-  //       .then((user) => {
-  //         setUser(user);
-  //       })
-  //       .catch((err) => console.log(err));
-  //   }, []);
+
   return (
     <>
       <ContainerMain>
