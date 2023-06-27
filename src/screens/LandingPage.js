@@ -5,7 +5,6 @@ import SearchIcon from "@mui/icons-material/Search";
 import "../App.css";
 import MovieComponent from "../components/MovieComponent";
 import MovieInfoComponent from "../components/MovieInfoComponent";
-import { removeUser } from "../store/userSlice";
 import axios from "axios";
 import { Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
@@ -30,6 +29,9 @@ const Header = styled.div`
   font-size: 24px;
   font-weight: bold;
   box-shadow: 0 3px 6px 0 #555;
+
+  /* Updated styles */
+  padding: 10px;
 `;
 
 const AppName = styled.div`
@@ -38,18 +40,25 @@ const AppName = styled.div`
   align-items: center;
   font-family: "Bebas Neue", cursive;
   letter-spacing: 1px;
+  cursor: pointer;
+
+  /* Updated styles */
+  font-size: 28px;
 `;
 
 const SearchBar = styled.div`
   display: flex;
   flex-direction: row;
-  padding: 0px 0px 0px 10px;
+  padding: 0px 10px;
   background-color: white;
   border-radius: 8px;
   margin-left: auto;
   margin-right: auto;
   width: 54%;
   align-items: center;
+
+  /* Updated styles */
+  max-width: 500px;
 `;
 
 const SearchInput = styled.input`
@@ -60,16 +69,69 @@ const SearchInput = styled.input`
   border: none;
   outline: none;
   background-color: white;
-  margin-left: 15px;
+  margin-left: 10px;
+
+  /* Updated styles */
+  padding: 8px;
 `;
 
 const MovieListContainer = styled.div`
   display: flex;
-  flex-direcrtion: row;
+  flex-direction: row;
   flex-wrap: wrap;
   padding: 30px;
   gap: 18px;
   justify-content: space-evenly;
+`;
+
+const TypographyHeading = styled(Typography)`
+  font-family: "Bebas Neue";
+  text-align: left;
+  background-color: black;
+  padding-left: 60px;
+  color: #f6cc38;
+`;
+
+const VideoContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin: 5px;
+  background-color: black;
+  padding: 10px;
+`;
+
+const UpcomingMoviesIframe = styled.iframe`
+  width: 100%;
+  height: 547px;
+  title: "Upcoming Movies";
+  border: none;
+`;
+
+const IconButton = styled.div`
+  font-size: 28px;
+  color: red;
+  cursor: pointer;
+`;
+
+const NavLinks = styled.ul`
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  /* Updated styles */
+  gap: 10px;
+`;
+
+const NavLinkItem = styled.li`
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+`;
+
+const NavLinksContainer = styled.nav`
+  display: flex;
+  align-items: center;
 `;
 
 const getCurrentUser = async () => {
@@ -134,7 +196,6 @@ const LandingPage = () => {
     <ContainerMain>
       <Header>
         <AppName
-          style={{ cursor: "pointer" }}
           onClick={() => {
             navigate("/");
           }}

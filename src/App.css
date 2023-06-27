@@ -4,11 +4,19 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
 }
 
-ul li {
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #040404;
+}
+
+ul {
   list-style: none;
+}
+
+li {
   display: inline;
   padding: 20px;
   font-size: 18px;
@@ -16,12 +24,7 @@ ul li {
 }
 
 span {
-  /* opacity: 0.6; */
   color: #1c689c;
-}
-
-body {
-  background-color: #040404;
 }
 
 .watchListHeading {
@@ -34,9 +37,8 @@ body {
 }
 
 ::-webkit-scrollbar {
-  /* background-color: #1C689C; */
-  background-color: #222;
   width: 20px;
+  background-color: #222;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -50,26 +52,24 @@ body {
 
 @media screen and (max-width: 800px) {
   .navLinks {
-    flex-direction: column;
-    align-items: center;
     position: fixed;
-    z-index: 88;
     top: 60px;
     right: -300px;
     width: 180px;
     height: 40vh;
     background-color: #222;
     transition: 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 88;
   }
+
   .icon {
     display: block;
   }
-}
 
-.navLinks {
-  display: flex;
-}
-
-.activeMenu {
-  right: 0px;
+  .activeMenu {
+    right: 0;
+  }
 }
